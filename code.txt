@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main () {
+string s,srg;
+ ofstream fs("testout.txt");
+if (fs.is_open())
+{
+	fs<<"welcome to javaTpoint.\n";
+	fs<<"c++ tutorial.\n";
+	fs.close();
+}
+else cout<<"file opening is fail.";
+//code for read data from file
+ifstream filestream("testout.txt");
+if(filestream.is_open())
+{
+	while (getline (filestream,srg))
+	{
+		cout<<srg<<endl;
+	}
+	filestream.close();
+}
+else
+{
+	cout<<"file opening is fail."<<endl;
+	
+}
+
+return 0;
+}
